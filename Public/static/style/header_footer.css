@@ -1,0 +1,113 @@
+
+
+header {
+  background-color: var(--dark-neutral-color);
+}
+
+.brand-logo-light{
+  width: 90px;
+  height: 70px;
+  margin-left: 50px;
+}
+
+.content_navbar {
+  background-color: var(--primary-color); /* Azul Escuro */
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 110px;
+  position: fixed;
+  justify-content: space-between;
+  color: var(--light-neutral-color); /* Branco (cor do texto) */
+}
+
+.content_navbar h1 {
+  margin: 0;
+  color: var(--light-neutral-color); /* Branco (cor do título) */
+}
+
+.content_links ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.content_links li {
+  margin-right: 10px;
+}
+
+.content_links a {
+  text-decoration: none;
+  color: var(--primary-color); /* Branco (cor dos links) */
+}
+
+.content_buttons {
+  display: flex;
+}
+
+.content_buttons button {
+  margin-left: 10px;  
+  padding: 5px 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.button_register {
+  margin-left: 10px;
+  background-color: #0d6efd;
+  color: var(--light-neutral-color); /* Branco */
+  border-radius: 15px;
+}
+
+.button_register a{
+  text-decoration: none;
+  color: var(--light-neutral-color);
+}
+.button_login a{
+  text-decoration: none;
+  color: var(--light-neutral-color);
+}
+
+.button_login {
+  background-color: #0d6efd; /* Cinza Médio */
+  color: var(--light-neutral-color); /* Branco */
+  border-radius: 15px;
+}
+
+.button_login:hover{
+  background-color: #063170; /* Cinza Médio */
+}
+.button_register:hover{
+  background-color: #063170; /* Cinza Médio */
+}
+
+
+.fixed-top {
+  transition: background-color 0.3s ease-in-out, padding 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Initial header styles (optional) */
+.fixed-top {
+  background-color: rgba(255, 255, 255, 0.9); /* Adjust opacity for initial transparency */
+  padding: 1rem; /* Adjust padding for initial size */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Optional subtle shadow */
+}
+
+/* Scrolled header styles */
+.fixed-top.scrolled {
+  background-color: #fff; /* Set desired background color for scrolled state */
+  padding: 0.5rem; /* Adjust padding for shrunk size */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Adjust shadow for scrolled state */
+}
+
+
+.hamburger-menu {
+  display: none;
+  cursor: pointer;
+}
+
+.hamburger-menu span {
+  font-size: 30px;
+  color: var(--light-neutral-color); /* Branco */
+}

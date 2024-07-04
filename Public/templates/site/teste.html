@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciador de Eventos</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Gerenciador de Eventos</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Início <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#about">Sobre</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#events">Eventos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">Contato</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Carrossel -->
+    <div id="eventCarousel" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#eventCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#eventCarousel" data-slide-to="1"></li>
+            <li data-target="#eventCarousel" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="https://via.placeholder.com/1500x500" class="d-block w-100" alt="Evento 1">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Evento 1</h5>
+                    <p>Descrição do Evento 1</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="https://via.placeholder.com/1500x500" class="d-block w-100" alt="Evento 2">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Evento 2</h5>
+                    <p>Descrição do Evento 2</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="https://via.placeholder.com/1500x500" class="d-block w-100" alt="Evento 3">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Evento 3</h5>
+                    <p>Descrição do Evento 3</p>
+                </div>
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#eventCarousel" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Anterior</span>
+        </a>
+        <a class="carousel-control-next" href="#eventCarousel" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Próximo</span>
+        </a>
+    </div>
+
+    <!-- Sobre -->
+    <section id="about" class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2 class="text-center">Sobre Nós</h2>
+                    <p class="text-center">Descrição sobre o gerenciador de eventos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Eventos Futuros -->
+    <section id="events" class="py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2 class="text-center">Próximos Eventos</h2>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="card mb-4">
+                                <img src="https://via.placeholder.com/400x200" class="card-img-top" alt="Evento 1">
+                                <div class="card-body">
+                                    <h5 class="card-title">Evento 1</h5>
+                                    <p class="card-text">Descrição breve do evento.</p>
+                                    <a href="#" class="btn btn-primary">Mais Informações</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card mb-4">
+                                <img src="https://via.placeholder.com/400x200" class="card-img-top" alt="Evento 2">
+                                <div class="card-body">
+                                    <h5 class="card-title">Evento 2</h5>
+                                    <p class="card-text">Descrição breve do evento.</p>
+                                    <a href="#" class="btn btn-primary">Mais Informações</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card mb-4">
+                                <img src="https://via.placeholder.com/400x200" class="card-img-top" alt="Evento 3">
+                                <div class="card-body">
+                                    <h5 class="card-title">Evento 3</h5>
+                                    <p class="card-text">Descrição breve do evento.</p>
+                                    <a href="#" class="btn btn-primary">Mais Informações</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contato -->
+    <section id="contact" class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2 class="text-center">Contato</h2>
+                    <form>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="inputName">Nome</label>
+                                <input type="text" class="form-control" id="inputName" placeholder="Nome">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="inputEmail">Email</label>
+                                <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputMessage">Mensagem</label>
+                            <textarea class="form-control" id="inputMessage" rows="4" placeholder="Mensagem"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Enviar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container text-center">
+            <p>&copy; 2024 Gerenciador de Eventos. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

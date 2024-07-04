@@ -1,0 +1,114 @@
+:root {
+    --primary-color: #2C3E50; /* Azul Escuro */
+    --secondary-color: #ECF0F1; /* Cinza Claro */
+    --accent-color: #E74C3C; /* Vermelho */
+    --light-neutral-color: #FFFFFF; /* Branco */
+    --dark-neutral-color: #34495E; /* Cinza Escuro */
+    --success-color: #27AE60; /* Verde */
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--secondary-color);
+    color: var(--dark-neutral-color);
+  }
+  
+  header {
+    background-color: var(--dark-neutral-color);
+  }
+  
+  .brand-logo-light {
+    width: 90px;
+    height: 70px;
+  }
+  
+  .fixed-top {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 1rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease-in-out, padding 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  }
+  
+  .fixed-top.scrolled {
+    background-color: #fff;
+    padding: 0.5rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  .hamburger-menu {
+    display: none;
+    cursor: pointer;
+  }
+  
+  .hamburger-menu span {
+    font-size: 30px;
+    color: var(--light-neutral-color); /* Branco */
+  }
+  
+  @media (max-width: 768px) {
+    .content_links, .content_buttons {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      background-color: var(--dark-neutral-color);
+    }
+  
+    .content_links.active, .content_buttons.active {
+      display: flex;
+    }
+  
+    .hamburger-menu {
+      display: block;
+    }
+  
+    .nav-link {
+      margin: 10px 0;
+    }
+  }
+  
+  main {
+    padding: 2rem 0;
+    background-color: var(--secondary-color);
+    color: var(--dark-neutral-color);
+  }
+  
+  #search {
+    margin-bottom: 2rem;
+    padding: 2rem;
+    background-color: var(--light-neutral-color);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  #events .category-section {
+    margin-bottom: 2rem;
+  }
+  
+  #events .event-list {
+    display: flex;
+    overflow-x: auto;
+    padding-bottom: 1rem;
+  }
+  
+  #events .event-item {
+    background-color: var(--light-neutral-color);
+    border: 1px solid var(--primary-color);
+    border-radius: 8px;
+    padding: 1rem;
+    min-width: 300px;
+    margin-right: 1rem;
+    display: inline-block;
+    vertical-align: top;
+  }
+  
+  #events .event-item h4 {
+    margin-top: 0;
+  }
+  
+  #events .event-item p {
+    margin-bottom: 0;
+  }
+  
