@@ -25,6 +25,10 @@ def home():
 def login():
     return render_template("site/login.html")
 
+@app.route('/participante')
+def participante():
+    return render_template("site/participante.html")
+
 @app.route('/eventos')
 def eventos():
     return render_template("site/events.html")

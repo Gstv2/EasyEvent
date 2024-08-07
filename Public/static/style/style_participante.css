@@ -1,0 +1,158 @@
+:root {
+    --primary-color: #2C3E50;
+    --secondary-color: #ECF0F1;
+    --accent-color: #E74C3C;
+    --light-neutral-color: #FFFFFF;
+    --dark-neutral-color: #34495E;
+    --success-color: #27AE60;
+}
+
+body {
+    display: flex;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.sidebar {
+    width: 200px;
+    height: 100vh;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    margin: 60px 30px 0 30px;
+    display: block;
+}
+
+.sidebar a:hover {
+    background-color: var(--dark-neutral-color);
+    padding: 10px;
+}
+
+.brand-logo-light{
+    width: 90px;
+    height: 70px;
+    margin-top: 0%;
+    margin-left: 30px;
+    align-items: center;
+}
+
+.link_grup{
+    margin-top: 3rem;
+}
+
+.header {
+    width: 100%;
+    height: min-content;
+    background-color: var(--secondary-color);
+    padding: 20px;
+    margin: 0%;
+    display: flex;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+}
+
+.user-info img {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+.content {
+    flex: 1;
+
+}
+
+.button {
+    background-color: var(--primary-color);
+    color: var(--light-neutral-color);
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    position: relative;
+    left: 80vh;
+}
+
+.button:hover {
+    background-color: var(--dark-neutral-color);
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+    padding-top: 60px;
+}
+
+.modal-content {
+    background-color: var(--light-neutral-color);
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+.close {
+    color: var(--dark-neutral-color);
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: var(--primary-color);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.form-group {
+    margin: 15px 0;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.form-group button {
+    background-color: var(--success-color);
+    color: var(--light-neutral-color);
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.form-group button:hover {
+    background-color: #218838;
+}
+
+.event-card {
+    background-color: var(--secondary-color);
+    padding: 15px;
+    border: 1px solid #ddd;
+    margin: 10px 0;
+}

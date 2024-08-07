@@ -1,4 +1,11 @@
-
+:root {
+  --primary-color: #2C3E50; /* Azul Escuro */
+  --secondary-color: #ECF0F1; /* Cinza Claro */
+  --accent-color: #E74C3C; /* Vermelho */
+  --light-neutral-color: #FFFFFF; /* Branco */
+  --dark-neutral-color: #34495E; /* Cinza Escuro */
+  --success-color: #27AE60; /* Verde */
+}
 
 header {
   background-color: var(--dark-neutral-color);
@@ -10,16 +17,6 @@ header {
   margin-left: 50px;
 }
 
-.content_navbar {
-  background-color: var(--primary-color); /* Azul Escuro */
-  display: flex;
-  align-items: center;
-  width: 100%;
-  height: 110px;
-  position: fixed;
-  justify-content: space-between;
-  color: var(--light-neutral-color); /* Branco (cor do texto) */
-}
 
 .content_navbar h1 {
   margin: 0;
@@ -110,4 +107,38 @@ header {
 .hamburger-menu span {
   font-size: 30px;
   color: var(--light-neutral-color); /* Branco */
+}
+
+
+.container{
+  width: 100%;
+  height: 10vw;
+  background-color: var(--dark-neutral-color);
+}
+
+@media (max-width: 768px) {
+  .content_links{
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;  
+  }
+
+  .content_buttons{
+    justify-content: center;
+  }
+
+  .content_links.active, .content_buttons.active {
+    display: flex;
+  }
+
+  .hamburger-menu, .hamburger-menu span {
+    display: block;
+    color: var(--primary-color);
+    font-size: 50px;
+  }
+
+  .nav-link {
+    margin: 10px 0;
+  }
 }
