@@ -4,38 +4,86 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gestão de Eventos - Participante</title>
-    <link rel="stylesheet" href="/Public/static/style/header_footer.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='static/header_footer.css')}}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ url_for('static', filename='style/style_participante.css')}}">
-
 </head>
 <body>
-    <div class="sidebar">
-        <a class="d-inline-flex link-body-emphasid text-decoration-none">
-            <img class="brand-logo-light" src="/Public/static/img/logo.png" alt="imagem_logo" />
-        </a>
-        <div class="link_grup">
-            <a href="#">Home</a>
-            <a href="#">Meus Eventos</a>
-            <a href="#">Meu Perfil</a>
+    <header class="header d-flex flex-wrap align-items-center justify-content-between py-2 mb-2" id="header">
+        <div class="col-md-2 mb-1 mb-md-0">
+            <a class="d-inline-flex link-body-emphasis text-decoration-none">
+                <img class="brand-logo-light" src="{{ url_for('static', filename='img/logo.png')}}" alt="imagem_logo" />
+            </a>
         </div>
-    </div>
-    <div class="header">
-        <div class="user-info">
-            <img src="user-photo.jpg" alt="User Photo">
-            <span>Olá, Usuário!</span>
+        <div class="d-flex align-items-center w-50 justify-content-end">
+            <button class="button-add-event" id="addEventBtn">+</button>
+            <form class="w-50 me-3 align-items-end" role="search">
+                <input type="search" class="form-control rounded-pill" placeholder="Search..." aria-label="Search">
+            </form>
+            <div class="flex-shrink-0 dropdown">
+                <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                    <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">
+                </a>
+                <ul class="dropdown-menu text-small shadow">
+                    <li><a class="dropdown-item" id="addEventPerfil" href="#">New project...</a></li>
+                    <li><a class="dropdown-item" href="#">Settings</a></li>
+                    <li><a class="dropdown-item" href="#">Profile</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="#">Sign out</a></li>
+                </ul>
+            </div>
         </div>
-        <button class="button" id="addEventBtn">Adicionar Evento</button>
-    </div>
-    <div class="content">
-        <div id="eventList">
-        </div>
-    </div>
+    </header>
 
+    <div class="content">
+        <div class="sidebar p-3 text-bg-dark">
+            <ul class="nav nav-pills flex-column mb-auto">
+                <li class="nav-item">
+                    <a href="#" class="nav-link text-white" aria-current="page">
+                        <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#home"></use></svg>
+                        Home
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="nav-link text-white">
+                        <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#speedometer2"></use></svg>
+                        Dashboard
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="nav-link text-white">
+                        <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#table"></use></svg>
+                        Orders
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="nav-link text-white">
+                        <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#grid"></use></svg>
+                        Products
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="nav-link text-white">
+                        <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#people-circle"></use></svg>
+                        Customers
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="main-content">
+            <div id="eventList"> 
+            </div>
+        </div>
+    </div>
     <div id="eventModal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
             <h2>Criar Novo Evento</h2>
             <form id="eventForm">
+                <div class="form-group">
+                    <label for="eventImage">Imagem do Evento</label>
+                    <input type="file" id="eventImage" name="eventImage" accept="image/*" required>
+                </div>
                 <div class="form-group">
                     <label for="eventName">Nome do Evento</label>
                     <input type="text" id="eventName" name="eventName" required>
@@ -58,47 +106,7 @@
             </form>
         </div>
     </div>
-
-    <script>
-        var modal = document.getElementById("eventModal");
-        var btn = document.getElementById("addEventBtn");
-        var span = document.getElementsByClassName("close")[0];
-
-        btn.onclick = function() {
-            modal.style.display = "block";
-        }
-
-        span.onclick = function() {
-            modal.style.display = "none";
-        }
-
-        window.onclick = function(event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
-        }
-
-        var form = document.getElementById("eventForm");
-        form.onsubmit = function(event) {
-            event.preventDefault();
-            var eventName = document.getElementById("eventName").value;
-            var eventDate = document.getElementById("eventDate").value;
-            var eventLocation = document.getElementById("eventLocation").value;
-            var eventDescription = document.getElementById("eventDescription").value;
-
-            var eventCard = document.createElement("div");
-            eventCard.className = "event-card";
-            eventCard.innerHTML = `
-                <h3>${eventName}</h3>
-                <p><strong>Data:</strong> ${eventDate}</p>
-                <p><strong>Local:</strong> ${eventLocation}</p>
-                <p><strong>Descrição:</strong> ${eventDescription}</p>
-            `;
-
-            document.getElementById("eventList").appendChild(eventCard);
-            modal.style.display = "none";
-            form.reset();
-        }
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="{{ url_for('static', filename='js/script_participante.js')}}"></script>
 </body>
 </html>

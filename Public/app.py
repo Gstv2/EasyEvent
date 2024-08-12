@@ -37,6 +37,10 @@ def eventos():
 def teste():
     return render_template("site/teste.html")
 
+@app.route('/teste02')
+def teste02():
+    return render_template("site/teste02.html")
+
 
 if __name__ == '__main__':
     app.run(debug=True)

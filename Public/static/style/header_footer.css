@@ -110,10 +110,15 @@ header {
 }
 
 
-.container{
+.container_footer{
   width: 100%;
   height: 10vw;
   background-color: var(--dark-neutral-color);
+  color: var(--dark-neutral-color);
+}
+
+.icon{
+  color: black;
 }
 
 @media (max-width: 768px) {

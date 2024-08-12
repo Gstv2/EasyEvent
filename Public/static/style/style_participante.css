@@ -8,17 +8,57 @@
 }
 
 body {
-    display: flex;
     margin: 0;
     font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.header {
+    position: fixed;
+    width: 100%;
+    z-index: 1030;
+    top: 0;
+    background-color: var(--secondary-color);
+    border-bottom: 1px solid #dee2e6;
+    padding: 20px;
+    display: flex;
+}
+
+.header .user-info {
+    display: flex;
+    align-items: center;
+}
+
+.header .user-info img {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+.brand-logo-light {
+    width: 90px;
+    height: 70px;
+    margin-left: 30px;
+}
+
+.content {
+    display: flex;
+    flex: 1;
+    margin-top: 70px; /* height of the header */
 }
 
 .sidebar {
-    width: 200px;
-    height: 100vh;
+    position: fixed;
+    top: 70px; /* height of the header */
+    left: 0;
+    width: 280px;
+    height: calc(100% - 70px); /* height of the sidebar excluding header */
     background-color: var(--primary-color);
     color: var(--secondary-color);
-
+    overflow-y: auto;
     display: flex;
     flex-direction: column;
 }
@@ -35,42 +75,12 @@ body {
     padding: 10px;
 }
 
-.brand-logo-light{
-    width: 90px;
-    height: 70px;
-    margin-top: 0%;
-    margin-left: 30px;
-    align-items: center;
-}
-
-.link_grup{
-    margin-top: 3rem;
-}
-
-.header {
-    width: 100%;
-    height: min-content;
-    background-color: var(--secondary-color);
-    padding: 20px;
-    margin: 0%;
-    display: flex;
-}
-
-.user-info {
-    display: flex;
-    align-items: center;
-}
-
-.user-info img {
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    margin-right: 10px;
-}
-
-.content {
+.main-content {
+    margin-left: 280px; /* width of the sidebar */
     flex: 1;
-
+    padding: 20px;
+    overflow-y: auto;
+    height: calc(100vh - 70px); /* height excluding the header */
 }
 
 .button {
@@ -85,6 +95,17 @@ body {
 
 .button:hover {
     background-color: var(--dark-neutral-color);
+}
+
+.button-add-event{
+    background-color: #27AE60;
+    color: #ddd;
+    border: none;
+    border-radius: 20px;
+    margin-right: 0.5rem;
+    width: 50px;
+    height: 30px;
+    font-size: 20px;
 }
 
 .modal {
@@ -155,4 +176,15 @@ body {
     padding: 15px;
     border: 1px solid #ddd;
     margin: 10px 0;
+    border-radius: 5px;
 }
+
+.event-image {
+    display: column;
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+    width: 200px;
+    height: 200px;
+}
+
